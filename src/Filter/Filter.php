@@ -152,7 +152,7 @@ class Filter
     private function escape()
     {
         if ($this->escape) {
-            $this->value = ldap_escape($this->value, null, LDAP_ESCAPE_FILTER);
+            $this->value = ldap_escape($this->value, "", LDAP_ESCAPE_FILTER);
         }
         $this->wildcardify();
     }
