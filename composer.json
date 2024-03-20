@@ -1,5 +1,5 @@
 {
-    "name": "avadaneidanut/ldapquery",
+    "name": "mazenovi/ldapquery",
     "type": "library",
     "description": "A light weight package for easily building LDAP advanced filter queries.",
     "keywords": [
