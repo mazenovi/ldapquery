@@ -11,6 +11,7 @@ use LdapQuery\Exceptions\GrammarException;
 use LdapQuery\Filter\FilterFactory;
 use LdapQuery\Group\Group;
 use LdapQuery\Group\GroupFactory;
+use Symfony\Component\String\UnicodeString;
 
 class Builder
 {   
@@ -173,7 +174,7 @@ class Builder
      */
     protected function dynamicWhere($method, $attribute, $operator = null, $value = null)
     {
-        $options = explode('_', snake_case($method));
+        $options = explode('_', (new UnicodeString($method))->snake());
 
         if (Str::startsWith($method, 'where')) {
             $method = 'where';
